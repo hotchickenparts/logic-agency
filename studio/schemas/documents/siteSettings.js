@@ -1,4 +1,4 @@
-import { FcSettings } from 'react-icons/fc'
+import { FcSettings } from "react-icons/fc";
 
 export default {
   name: "siteSettings",
@@ -47,8 +47,7 @@ export default {
     },
     {
       name: "address",
-      type: "address",
-      title: "Agency Address"
+      type: "address"
     }
   ]
 };

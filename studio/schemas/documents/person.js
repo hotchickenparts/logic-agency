@@ -27,6 +27,11 @@ export default {
       type: "email"
     },
     {
+      name: "twitter",
+      title: "Twitter handle",
+      type: "string"
+    },
+    {
       name: "image",
       title: "Image",
       type: "figure"
