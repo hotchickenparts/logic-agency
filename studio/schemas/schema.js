@@ -5,17 +5,22 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // Document types
+import article from "./documents/article";
 import category from "./documents/category";
 import person from "./documents/person";
 import project from "./documents/project";
 import siteSettings from "./documents/siteSettings";
 
 // Object types
+import authorReference from './objects/authorReference';
 import bioPortableText from "./objects/bioPortableText";
+import bodyPortableText from "./objects/bodyPortableText";
+import excerptPortableText from "./objects/excerptPortableText";
 import figure from "./objects/figure";
-import teamMember from "./objects/teamMember";
+import mainImage from "./objects/mainImage"
 import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
+import teamMember from "./objects/teamMember";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -26,13 +31,18 @@ export default createSchema({
   types: schemaTypes.concat([
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
+    authorReference,
     bioPortableText,
+    bodyPortableText,
+    excerptPortableText,
     figure,
     teamMember,
+    mainImage,
     projectPortableText,
     simplePortableText,
     // The following are document types which will appear
     // in the studio.
+    article,
     category,
     person,
     project,

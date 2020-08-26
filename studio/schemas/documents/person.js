@@ -22,6 +22,11 @@ export default {
       }
     },
     {
+      name: "email",
+      title: "Email",
+      type: "email"
+    },
+    {
       name: "image",
       title: "Image",
       type: "figure"

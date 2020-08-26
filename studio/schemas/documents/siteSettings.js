@@ -1,7 +1,10 @@
+import { FcSettings } from 'react-icons/fc'
+
 export default {
   name: "siteSettings",
   type: "document",
   title: "Site Settings",
+  icon: FcSettings,
   __experimental_actions: [
     // 'create',
     "update",
@@ -15,27 +18,32 @@ export default {
       title: "Title"
     },
     {
+      name: "subtitle",
+      type: "string",
+      title: "Subtilte",
+      description: "Short and sweet tagline for your agency."
+    },
+    {
       name: "description",
       type: "text",
       title: "Description",
-      description: "Describe your portfolio for search engines and social media."
+      description: "Describe your agency for search engines and social media."
     },
     {
       name: "keywords",
       type: "array",
       title: "Keywords",
-      description: "Add keywords that describes your portfolio.",
+      description: "Add keywords that describes your agency.",
       of: [{ type: "string" }],
       options: {
         layout: "tags"
       }
     },
     {
-      name: "author",
-      type: "reference",
-      description: "Publish an author and set a reference to them here.",
-      title: "Author",
-      to: [{ type: "person" }]
+      name: "contact",
+      type: "email",
+      description: "Contact email for your agency.",
+      title: "Contact"
     }
   ]
 };
