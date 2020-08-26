@@ -44,6 +44,11 @@ export default {
       type: "email",
       description: "Contact email for your agency.",
       title: "Contact"
+    },
+    {
+      name: "address",
+      type: "address",
+      title: "Agency Address"
     }
   ]
 };

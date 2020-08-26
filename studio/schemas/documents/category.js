@@ -12,9 +12,20 @@ export default {
       title: "Title"
     },
     {
+      name: "image",
+      type: "figure",
+      title: "Image"
+    },
+    {
       name: "description",
       type: "text",
       title: "Description"
-    }
-  ]
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'image'
+    },
+  }
 };

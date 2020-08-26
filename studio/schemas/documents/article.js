@@ -30,9 +30,9 @@ export default {
       description: 'This can be used to schedule post for publishing'
     },
     {
-      name: 'mainImage',
-      type: 'mainImage',
-      title: 'Main image'
+      name: 'image',
+      type: 'figure',
+      title: 'Image'
     },
     {
       name: 'excerpt',
@@ -105,7 +105,7 @@ export default {
       title: 'title',
       publishedAt: 'publishedAt',
       slug: 'slug',
-      media: 'mainImage'
+      media: 'image'
     },
     prepare ({title = 'No title', publishedAt, slug = {}, media}) {
       const dateSegment = format(publishedAt, 'YYYY/MM')
