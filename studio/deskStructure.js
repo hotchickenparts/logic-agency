@@ -2,7 +2,7 @@ import S from "@sanity/desk-tool/structure-builder";
 import { FcSettings } from "react-icons/fc";
 
 const hiddenDocTypes = listItem =>
-  !["article", "capability", "category", "person", "project", "siteSettings"].includes(listItem.getId());
+  !["article", "capability", "category", "person", "project", "service", "siteSettings"].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -28,6 +28,10 @@ export default () =>
         .title("Projects")
         .schemaType("project")
         .child(S.documentTypeList("project").title("Projects")),
+      S.listItem()
+        .title("Services")
+        .schemaType("service")
+        .child(S.documentTypeList("service").title("Services")),
       S.divider(),
       S.listItem()
         .title("Settings")

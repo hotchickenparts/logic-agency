@@ -1,10 +1,10 @@
-import { FcTreeStructure } from "react-icons/fc";
+import { FcParallelTasks } from "react-icons/fc";
 
 export default {
   name: "category",
   type: "document",
   title: "Category",
-  icon: FcTreeStructure,
+  icon: FcParallelTasks,
   fields: [
     {
       name: "title",
@@ -21,6 +21,12 @@ export default {
       type: "text",
       title: "Description"
     },
+    {
+      name: 'imageGallery',
+      title: 'Image Gallery',
+      type: 'array',
+      of: [{type: 'figure'}]
+    }
   ],
   preview: {
     select: {

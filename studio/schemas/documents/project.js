@@ -66,6 +66,12 @@ export default {
       type: "projectPortableText"
     },
     {
+      name: "imageGallery",
+      title: "Image Gallery",
+      type: 'array',
+      of: [{ type: 'figure'}]
+    },
+    {
       name: "relatedProjects",
       title: "Related projects",
       type: "array",

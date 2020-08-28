@@ -10,6 +10,7 @@ import capability from "./documents/capability"
 import category from "./documents/category";
 import person from "./documents/person";
 import project from "./documents/project";
+import service from './documents/service';
 import siteSettings from "./documents/siteSettings";
 
 // Object types
@@ -48,6 +49,7 @@ export default createSchema({
     category,
     person,
     project,
+    service,
     siteSettings
   ])
 });

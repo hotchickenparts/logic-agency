@@ -22,16 +22,6 @@ export default {
       }
     },
     {
-      name: "email",
-      title: "Email",
-      type: "email"
-    },
-    {
-      name: "twitter",
-      title: "Twitter handle",
-      type: "string"
-    },
-    {
       name: "image",
       title: "Image",
       type: "figure"
@@ -40,7 +30,32 @@ export default {
       name: "bio",
       title: "Bio",
       type: "bioPortableText"
-    }
+    },
+    {
+      name: "email",
+      title: "Email",
+      type: "email"
+    },
+    {
+      name: "company",
+      title: "Company",
+      type: "string"
+    },
+    {
+      name: 'website',
+      title: 'Website',
+      type: 'string'
+    },
+    {
+      name: "twitter",
+      title: "Twitter",
+      type: "string"
+    },
+    {
+      name: "instagram",
+      title: "Instagram",
+      type: "string"
+    },
   ],
   preview: {
     select: {
