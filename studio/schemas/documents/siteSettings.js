@@ -18,26 +18,10 @@ export default {
       title: "Title"
     },
     {
-      name: "subtitle",
-      type: "string",
-      title: "Subtilte",
-      description: "Short and sweet tagline for your agency."
-    },
-    {
-      name: "description",
-      type: "text",
-      title: "Description",
-      description: "Describe your agency for search engines and social media."
-    },
-    {
-      name: "keywords",
-      type: "array",
-      title: "Keywords",
-      description: "Add keywords that describes your agency.",
-      of: [{ type: "string" }],
-      options: {
-        layout: "tags"
-      }
+      title: "Open graph",
+      name: "openGraph",
+      description: "These will be the default meta tags on all pages that have not set their own",
+      type: "openGraph"
     },
     {
       name: "contact",

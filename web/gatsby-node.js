@@ -5,6 +5,53 @@ const { isFuture } = require("date-fns");
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  actions.createTypes([
+    schema.buildObjectType({
+      name: "SanityPost",
+      interfaces: ["Node"],
+      fields: {
+        isPublished: {
+          type: "Boolean!",
+          resolve: source => new Date(source.publishedAt) <= new Date()
+        }
+      }
+    })
+  ]);
+};
+
+async function createLandingPages(pathPrefix = "/", graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityRoute(filter: { slug: { current: { ne: null } }, page: { id: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const routeEdges = (result.data.allSanityRoute || {}).edges || [];
+  routeEdges.forEach(edge => {
+    const { id, slug = {} } = edge.node;
+    const path = [pathPrefix, slug.current, "/"].join("");
+    reporter.info(`Creating landing page: ${path}`);
+    createPage({
+      path,
+      component: require.resolve("./src/templates/page.js"),
+      context: { id }
+    });
+  });
+}
+
 async function createProjectPages(graphql, actions) {
   const { createPage } = actions;
   const result = await graphql(`
@@ -42,6 +89,7 @@ async function createProjectPages(graphql, actions) {
     });
 }
 
-exports.createPages = async ({ graphql, actions }) => {
-  await createProjectPages(graphql, actions);
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  await createLandingPages("/", graphql, actions, reporter);
+  await createProjectPages(graphql, actions, reporter);
 };

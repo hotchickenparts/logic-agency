@@ -68,8 +68,11 @@ export default {
     {
       name: "imageGallery",
       title: "Image Gallery",
-      type: 'array',
-      of: [{ type: 'figure'}]
+      type: "array",
+      of: [{ type: "figure" }],
+      options: {
+        layout: "grid"
+      }
     },
     {
       name: "relatedProjects",

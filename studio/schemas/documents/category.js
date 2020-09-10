@@ -22,16 +22,19 @@ export default {
       title: "Description"
     },
     {
-      name: 'imageGallery',
-      title: 'Image Gallery',
-      type: 'array',
-      of: [{type: 'figure'}]
+      name: "imageGallery",
+      title: "Image Gallery",
+      type: "array",
+      of: [{ type: "figure" }],
+      options: {
+        layout: "grid"
+      }
     }
   ],
   preview: {
     select: {
-      title: 'title',
-      media: 'image'
-    },
+      title: "title",
+      media: "image"
+    }
   }
 };

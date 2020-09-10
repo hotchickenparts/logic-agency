@@ -1,8 +1,22 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { FcSettings } from "react-icons/fc";
+import { FcHome } from "react-icons/fc";
+import landingPages from "./src/structure/landingPages";
+import PreviewIFrame from "./src/components/previewIFrame";
 
 const hiddenDocTypes = listItem =>
-  !["article", "capability", "category", "person", "project", "service", "siteSettings"].includes(listItem.getId());
+  ![
+    "article",
+    "capability",
+    "category",
+    "navMenu",
+    "page",
+    "person",
+    "project",
+    "route",
+    "service",
+    "siteSettings"
+  ].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -42,6 +56,17 @@ export default () =>
             .documentId("siteSettings")
         )
         .icon(FcSettings),
+      S.documentListItem()
+        .title("Frontpage")
+        .schemaType("page")
+        .icon(FcHome)
+        .child(
+          S.document()
+            .schemaType("page")
+            .documentId("frontpage")
+            .views([S.view.form(), PreviewIFrame()])
+        ),
+      landingPages,
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above
