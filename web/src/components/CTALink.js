@@ -44,11 +44,7 @@ const CTALink = props => {
     );
   }
 
-  return (
-    <Link className="mr-3" to={link}>
-      {props.title}
-    </Link>
-  );
+  return <Link to={link}>{props.title}</Link>;
 };
 
 export default CTALink;

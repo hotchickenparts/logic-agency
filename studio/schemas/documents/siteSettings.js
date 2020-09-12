@@ -1,4 +1,5 @@
 import { FcSettings } from "react-icons/fc";
+import figure from "../../../web/src/components/figure";
 
 export default {
   name: "siteSettings",
@@ -16,6 +17,16 @@ export default {
       name: "title",
       type: "string",
       title: "Title"
+    },
+    {
+      name: "logo",
+      type: "image",
+      title: "Logo",
+      description: ".png or .jpg only",
+      options: {
+        hotspot: true,
+        accept: ".png, .jpg"
+      }
     },
     {
       title: "Open graph",

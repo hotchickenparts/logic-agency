@@ -14,6 +14,9 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-tailwindcss",
     "gatsby-plugin-build-date",
+    "gatsby-plugin-styled-components",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-source-sanity",
       options: {
